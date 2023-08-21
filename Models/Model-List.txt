@@ -1,0 +1,173 @@
+------------------------------------------------------------------------
+--------	Description of model-sets for artemide.		--------
+------------------------------------------------------------------------
+--
+-- 1) Order is chronological
+-- 2) In principle, models for older artemide versions could be compatible.
+--	Check that all files requred by current version are included.
+--	Copy absent files from any modern model (it should not affect older files).
+-- 3) Inside of each model directory, there is a ``constants-file'' that is needed 
+--	to run this model. It contains references to parameters of artemide used to 
+--	build a model, references to used LHAPDF sets.
+-- 4) In case of problems, contact me (Alexey Vladimirov, vladimirov.aleksey@gmail.com )
+--
+--
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+---------------------------------1--------------------------------------
+NAME:		1706.01473_Model1
+TMDs:		uTMDPDF (proton), DNP
+Date:		06.2017
+Reference: 	[1706.01473]
+Num.of replicas: --
+Comments: 	Old model. This was extracted by artemide 1.2(?). 
+		Does not run on modern versions of artemide.
+
+------------------------------------------------------------------------
+---------------------------------2--------------------------------------
+NAME:		BSV19.bFIT
+TMDs:		uTMDPDF (proton), DNP
+Date:		17.01.2019
+Reference: 	[1902.08474]
+Num.of replicas:300
+Comments: 	Extracted from full data set, BNP is fitted. 
+
+------------------------------------------------------------------------
+---------------------------------3--------------------------------------
+NAME:		BSV19.bFIT.noLHC
+TMDs:		uTMDPDF (proton), DNP
+Date:		17.01.2019
+Reference: 	[1902.08474]
+Num.of replicas:100
+Comments: 	Extracted from data set without LHC data, BNP is fitted. 
+
+------------------------------------------------------------------------
+---------------------------------4--------------------------------------
+NAME:		BSV19.bFIX
+TMDs:		uTMDPDF (proton), DNP
+Date:		20.02.2019
+Reference: 	[1902.08474]
+Num.of replicas:100
+Comments: 	Extracted from full data set, BNP=2.5 is fixed. 
+
+------------------------------------------------------------------------
+---------------------------------5--------------------------------------
+NAME:		BSV19.bFIX.noLHC
+TMDs:		uTMDPDF (proton), DNP
+Date:		20.02.2019
+Reference: 	[1902.08474]
+Num.of replicas:100
+Comments: 	Extracted from data set without LHC data, BNP=2.5 is fixed. 
+
+------------------------------------------------------------------------
+---------------------------------6--------------------------------------
+NAME:		Vpion19
+TMDs:		uTMDPDF (proton, h=1; pion^-, h=2), DNP
+Date:		11.07.2019
+Reference: 	[1907.10356]
+Num.of replicas:100
+Comments: 	Proton uTMDPDF and DNP are from BSV19.HERA20PDF.
+
+------------------------------------------------------------------------
+---------------------------------7--------------------------------------
+NAME:		BSV19.HERA20PDF
+TMDs:		uTMDPDF (proton, h=1), DNP
+Date:		16.07.2019
+Reference: 	[1902.08474]
+Num.of replicas:100
+Comments: 	Extracted from full data set [1902.08474], BNP is fitted.
+		Zeta-line exactly match non-pertrubative one.
+		Uses HERA20PDF as input
+		
+------------------------------------------------------------------------
+---------------------------------8--------------------------------------
+NAME:		BSV19.NNPDF31
+TMDs:		uTMDPDF (proton, h=1), DNP
+Date:		18.07.2019
+Reference: 	[1902.08474] 
+Num.of replicas:100
+Comments: 	Extracted from full data set [1902.08474], BNP is fitted.
+		Zeta-line exactly match non-pertrubative one.
+		Uses NNPDF3.1 as input
+
+------------------------------------------------------------------------
+---------------------------------9--------------------------------------
+NAME:		BSV19.CT14
+TMDs:		uTMDPDF (proton, h=1), DNP
+Date:		22.07.2019
+Reference: 	[1902.08474] 
+Num.of replicas:100
+Comments: 	Extracted from full data set [1902.08474], BNP is fitted.
+		Zeta-line exactly match non-pertrubative one.
+		Uses CT14 as input
+
+------------------------------------------------------------------------
+---------------------------------10-------------------------------------
+NAME:		BSV19.MMHT14
+TMDs:		uTMDPDF (proton, h=1), DNP
+Date:		24.07.2019
+Reference: 	[1902.08474] 
+Num.of replicas:100
+Comments: 	Extracted from full data set [1902.08474], BNP is fitted.
+		Zeta-line exactly match non-pertrubative one.
+		Uses MMHT14 as input
+
+------------------------------------------------------------------------
+---------------------------------11-------------------------------------
+NAME:		BSV19.PDF4LHC
+TMDs:		uTMDPDF (proton, h=1), DNP
+Date:		19.08.2019
+Reference: 	[1902.08474] 
+Num.of replicas:100
+Comments: 	Extracted from full data set [1902.08474], BNP is fitted.
+		Zeta-line exactly match non-pertrubative one.
+		Uses PDF4LHC15 as input
+
+------------------------------------------------------------------------
+---------------------------------12-------------------------------------
+NAME:		SV19
+TMDs:		uTMDPDF (proton, h=1), DNP, uTMDFF (pion h=1,kaon h=2)
+Date:		15.11.2019
+Reference: 	[1912.06532]
+Num.of replicas:>=100
+Comments: 	Collections of extraction for SV19 fit of DY, SIDIS, DY+SIDIS
+		Incorporate models 7-11 from this list. Contains separate constants
+        files, and replicas. Replicas are read from external files .rep
+	
+------------------------------------------------------------------------
+---------------------------------13-------------------------------------
+NAME:		BPV20
+TMDs:		SiversTMD
+Date:		04.12.2020
+Reference: 	[2103.03270]
+Num.of replicas:500
+Comments: 	Collections of extraction for Sivers function from the fit of SSA's in DY+SIDIS. 
+		The unpolarized functions and evolution are SV19_all=0, and Vpion19_all=0 (at nnlo and n3lo) (with NNPDF3.1+DSS+JAM(pion) input).
+		Separate constants for nnlo and n3lo cases. Replicas are read from external files .rep.
+		The replicas BPV20(nnlo) and BPV20(n3lo) are the main extraction.
+		The replicas BPV20(nnlo-noDY) and BPV20(n3lo-noDY) are the extraction from SIDIS only.
+		The replicas BPV20-NP(nnlo) and BPV20-NP(n3lo) are uncertanty bands due to SV19.
+
+------------------------------------------------------------------------
+---------------------------------14-------------------------------------
+NAME:		PDFbias22
+TMDs:		uTMDPDF
+Date:		29.04.2022
+Reference: 	[2201.07114]
+Num.of replicas:...
+Comments: 	Collections of extraction for unpolarized TMDPDF in the fit of DY, using different PDFs.
+		EXP replicas represent the propagation of uncertainty from the data.
+        PDF replicas represent the propagation of uncertainty from the PDF uncertaninty.
+        For PDFs sets HERA20, MSHT20, CT18, the destribution of PDF replicas was generated by us, and can be shared by request.
+        
+------------------------------------------------------------------------
+---------------------------------15-------------------------------------
+NAME:		ART23
+TMDs:		uTMDPDF
+Date:		10.05.2023
+Reference: 	[2305.????]
+Num.of replicas:1000
+Comments: 	Extraction of unpolarized TMDPDF in the fit of DY at N4LL, with the full propagation of uncertanties (PDF + EXP).
+        	The PDF is MSHT20. The 0-member is original, and the distribution of rest PDF replicas was generated by us, and can be shared by request.
+        	Also includes the 300-replica set based on NNPDF3.1 (not the main fit!).
